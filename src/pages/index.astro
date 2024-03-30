@@ -10,7 +10,7 @@ import Button from '@components/button.astro';
 ---
 
 <Base>
-  <section class="mb-[8vw] flex items-end gap-[3em]">
+  <section class="stack mb-[8vw] flex gap-[3em] md:items-end">
     <div>
       <h1 class="m-0 max-w-[8em] text-[calc(2em+1.6vw)] font-extrabold leading-[1.05] tracking-tighter">
 				Your friendly information manager
@@ -29,30 +29,32 @@ import Button from '@components/button.astro';
       </p>
     </div>
 
-    <Image
-	src={HeroImg}
-	alt="Aimee user interface shots"
-	width="749"
-	height="562"
-    />
+		<div class="flex-[1.5]">
+
+			<Image
+				src={HeroImg}
+				alt="Aimee user interface shots"
+				class="rounded-md"
+			/>
+		</div>
   </section>
 
-  <section>
-    <div>
+  <section class="stack">
+    <div class="card">
       <h2>Centralized storage</h2>
       <p>
         Access and manage their data with ease, without the need to switch
         between different applications or platforms.
       </p>
-      <Image src={Shot1} alt="Screenshot #2" width="518" height="389" />
+      <Image src={Shot1} alt="Screenshot #2" />
     </div>
-    <div>
+    <div class="card">
       <h2>Custom categories and tags</h2>
       <p>
         Quick and easy retrieval of information, empowering you to find exactly
         what you need, when you need it.
       </p>
-      <Image src={Shot2} alt="Screenshot #3" width="518" height="389" />
+      <Image src={Shot2} alt="Screenshot #3" />
     </div>
   </section>
 </Base>

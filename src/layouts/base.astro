@@ -19,29 +19,6 @@ import '@base.css';
       <slot />
     </main>
 
-    <!-- body > footer {
-  display: flex;
-  gap: 3em;
-
-  > :first-child { flex: .5 }
-
-  aside {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    display: grid;
-    gap: 2em;
-    flex: 1;
-  }
-
-  a {
-    display: block;
-    padding: .5em 0;
-  }
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-}
- -->
     <footer class="mb-16 mt-32 flex flex-col gap-[3em] md:flex-row">
       <h2 class="flex-[.5]">{CONSTANTS.brand}</h2>
       <aside
@@ -71,8 +48,8 @@ import '@base.css';
 
       <dialog
 	id="menu"
-	class="left-[inherit] right-[1em] top-[1em] w-[250px] scroll-mt-[1em] rounded-md border
-	border-[#eee] bg-white p-[4%] shadow-[0_0_0_1000em_rgba(0,_0,_0,_.6)] [&:target]:block"
+	class="card left-[inherit] right-[1em] top-[1em] w-[250px] scroll-mt-[1em]
+	shadow-[0_0_0_1000em_rgba(0,_0,_0,_.6)] [&:target]:block"
       >
         <a
 	href="#"
