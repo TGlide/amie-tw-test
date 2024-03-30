@@ -19,9 +19,34 @@ import '@base.css';
       <slot />
     </main>
 
-    <footer class="mb-16 mt-32">
-      <h2>{CONSTANTS.brand}</h2>
-      <aside>
+    <!-- body > footer {
+  display: flex;
+  gap: 3em;
+
+  > :first-child { flex: .5 }
+
+  aside {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: grid;
+    gap: 2em;
+    flex: 1;
+  }
+
+  a {
+    display: block;
+    padding: .5em 0;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+ -->
+    <footer class="mb-16 mt-32 flex flex-col gap-[3em] md:flex-row">
+      <h2 class="flex-[.5]">{CONSTANTS.brand}</h2>
+      <aside
+	class="grid flex-[1] grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] gap-[2em]"
+      >
         <!-- To astro -->
         {
           Object.entries(CONSTANTS.footer_navi).map(([cat, entries]) => {
@@ -29,7 +54,14 @@ import '@base.css';
               <nav>
                 <h3>{cat}</h3>
                 {entries.map((el) => {
-                  return <a href="#">{el}</a>
+                  return (
+                    <a
+	class="block py-[.5em] text-[90%] font-medium text-black opacity-60 hover:opacity-100 active:opacity-100"
+	href="#"
+                    >
+                      {el}
+                    </a>
+                  )
                 })}
               </nav>
             )
@@ -37,16 +69,16 @@ import '@base.css';
         }
       </aside>
 
-			background-color: #fff;
-			border: 1px solid #eee;
-			border-radius: .4em;
-			padding: max(4%, 1.5em) 4%;
       <dialog
 	id="menu"
 	class="left-[inherit] right-[1em] top-[1em] w-[250px] scroll-mt-[1em] rounded-md border
 	border-[#eee] bg-white p-[4%] shadow-[0_0_0_1000em_rgba(0,_0,_0,_.6)] [&:target]:block"
       >
-        <a href="#" class="absolute right-[.4em] top-[.15em] text-[2em] font-[200]">&times;</a>
+        <a
+	href="#"
+	class="absolute right-[.4em] top-[.15em] text-[2em] font-[200]"
+        >&times;</a
+        >
         <SiteNav insideDialog />
       </dialog>
     </footer>
