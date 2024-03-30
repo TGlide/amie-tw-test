@@ -1,0 +1,21 @@
+---
+interface Props {
+  href?: string
+  secondary?: boolean
+}
+const { href, secondary } = Astro.props
+const Element = href ? 'a' : 'button';
+---
+
+<Element
+	class:list={[
+		`inline-block cursor-pointer rounded-md border-0  p-[.7em_1.4em] text-center
+		font-semibold focus:outline-none active:scale-[0.98]`,
+		secondary
+		? 'shadow shadow-[#eee] bg-white hover:shadow-[#ddd] text-black'
+		: 'bg-gray-800 hover:bg-black text-white',
+	]}
+	{href}
+>
+  <slot />
+</Element>

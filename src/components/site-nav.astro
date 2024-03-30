@@ -1,0 +1,66 @@
+---
+import { CONSTANTS } from '@constants'
+import { Image } from 'astro:assets'
+import Button from './button.astro'
+
+interface Props {
+	insideDialog?: boolean
+}
+
+const { insideDialog } = Astro.props
+---
+
+<header class:list={[
+	insideDialog ? 'block [&_a]:block [&_a]:py-[.5em] [&_nav]:mt-[1em]' : 'flex items-center mb-32 gap-8',
+]}
+>
+  <a href="/">
+    <Image
+	class="max-h-6"
+	src={CONSTANTS.logo}
+	width="68"
+	height="24"
+	alt="Aimee logo"
+    />
+  </a>
+
+  <nav class:list={[
+		'items-center gap-8',
+		insideDialog ? 'block' : 'hidden md:flex',
+	]}
+  >
+    {
+      CONSTANTS.main_navi.map(el => (
+        <a
+	class="text-[90%] font-medium text-black opacity-60 hover:opacity-100 active:opacity-100"
+	href={`/${el.toLowerCase()}/`}
+        >
+          {el}
+        </a>
+      ))
+    }
+  </nav>
+
+  <aside class:list={[
+		'ml-auto items-center gap-8',
+		insideDialog ? 'grid gap-[2em]' : 'hidden md:flex',
+]}
+  >
+    <nav>
+      <a
+	class="text-[90%] font-medium  text-black opacity-60 hover:opacity-100 active:opacity-100"
+	href="/start/"
+      >Log in</a
+      >
+    </nav>
+    <Button href="/start/">Try now</Button>
+  </aside>
+
+	{!insideDialog && (
+		<a
+			href="#menu"
+			aria-label="Open the menu"
+			class="ml-auto inline-block size-6 bg-[url('menu.svg')] bg-[cover] md:hidden"
+		></a>
+	)}
+</header>
