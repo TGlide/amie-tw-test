@@ -1,0 +1,99 @@
+---
+import Base from '@layouts/base.astro'
+import { Image } from 'astro:assets'
+
+// Images
+import Shot4 from '@images/shot-4.webp'
+import Shot5 from '@images/shot-5.webp';
+---
+
+<Base>
+  <h1>Changelog</h1>
+  <p>Updates and improvements to Aimee</p>
+
+  <div class="stack card m-[3em_0_0]">
+    <div class="lg:sticky lg:top-6 lg:h-12 lg:flex-[0.5]">
+      <h2>Localization 2.0</h2>
+      <p class="mt-0 text-base text-[#777]">February 13, 2024.</p>
+    </div>
+    <div>
+      <Image src={Shot4} alt="Localization shot" width="762" height="571" />
+      <p>
+        Localization 2.0 includes an adaptive user interface that can
+        automatically adjust to the user's language and cultural preferences.
+        This feature allows for a more personalized user experience, ensuring
+        that the app or website is tailored to the user's specific needs.
+      </p>
+      <ul>
+        <li>
+          <strong>Automated content analysis</strong> to identify and extract text
+          that needs to be translated. This feature reduces the time and effort required
+          for manual text extraction, resulting in faster and more efficient translation
+          processes.
+        </li>
+        <li>
+          <strong>Contextual translation capabilities</strong> that consider the
+          surrounding text and context when translating content
+        </li>
+        <li>
+          <strong>Machine learning algorithms</strong> to improve translation accuracy
+          and efficiency over time. These algorithms analyze past translations and
+          learn from them, enabling the system to make more accurate translations.
+        </li>
+        <li>
+          <strong>Real-time collaboration</strong> features that allow multiple translators
+          to work on the same project simultaneously. This feature improves translation
+          efficiency and ensures that projects are completed on time.
+        </li>
+        <li>
+          <strong>Workflow management</strong> features that allow for the efficient
+          management of translation projects. This feature includes task assignment,
+          progress tracking, and version control, ensuring that projects are completed
+          on time and within budget.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="stack card m-[3em_0_0]">
+    <div class="lg:sticky lg:top-6 lg:h-12 lg:flex-[0.5]">
+      <h2>Unified Interface</h2>
+      <p class="mt-0 text-base text-[#777]">January 5, 2024.</p>
+    </div>
+    <div>
+      <Image
+	src={Shot5}
+	alt="Unified interface shot"
+	width="762"
+	height="571"
+      />
+      <p>
+        A unified interface allows users to customize the layout of their
+        workspace. This includes the ability to add, remove, and rearrange
+        various elements and features to suit the user's preferences.
+      </p>
+      <ul>
+        <li>
+          <strong>Cross-Platform Compatibility</strong> Aimee is designed to work
+          seamlessly across different platforms, including Windows, Mac, Linux, and
+          mobile devices.
+        </li>
+        <li>
+          <strong>Integrated search feature</strong> that allows users to quickly
+          find the information they need. This can include searching within documents,
+          emails, and other types of content.
+        </li>
+        <li>
+          <strong>Notification system</strong> that alerts users to important updates
+          or events. This can include notifications for new emails, upcoming events,
+          or updates to documents.
+        </li>
+        <li>
+          <strong>Analytics and reporting capabilities</strong> to include tracking
+          user activity, generating reports on usage patterns, or identifying areas
+          for improvement.
+        </li>
+      </ul>
+    </div>
+  </div>
+</Base>
