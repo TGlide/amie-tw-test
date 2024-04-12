@@ -2,8 +2,9 @@
 interface Props {
   href?: string
   secondary?: boolean
+	class?: string
 }
-const { href, secondary } = Astro.props
+const { href, secondary, class: className } = Astro.props
 const Element = href ? 'a' : 'button';
 ---
 
@@ -14,6 +15,7 @@ const Element = href ? 'a' : 'button';
 		secondary
 		? 'shadow shadow-[#eee] bg-white hover:shadow-[#ddd] text-black'
 		: 'bg-gray-800 hover:bg-black text-white',
+		className,
 	]}
 	{href}
 >
