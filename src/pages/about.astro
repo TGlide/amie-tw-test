@@ -1,0 +1,94 @@
+---
+import Base from '@layouts/base.astro'
+
+import Avatar1 from '@images/avatar-1.png'
+import Avatar2 from '@images/avatar-2.png'
+import Avatar3 from '@images/avatar-3.png'
+import Avatar4 from '@images/avatar-4.png'
+import Avatar5 from '@images/avatar-5.png'
+import Avatar6 from '@images/avatar-6.png'
+import Avatar7 from '@images/avatar-7.png'
+import Avatar8 from '@images/avatar-8.png'
+import type { ImageMetadata } from 'astro'
+
+type Person = {
+  name: string
+  role: string
+  avatar: ImageMetadata
+}
+
+const people: Person[] = [
+  {
+    name: 'Brick Steel',
+    role: 'Founder of Swiftix. Investor in Zingify, Zoomify.',
+    avatar: Avatar1,
+  },
+  {
+    name: 'Blaze Maverick',
+    role: 'Founder of QuikVibe. Investor in Zingify, Zoomify.',
+    avatar: Avatar2,
+  },
+  {
+    name: 'Samantha Johnson',
+    role: 'Founder of RapidGlow. Investor in Zingify, Zoomify.',
+    avatar: Avatar3,
+  },
+  {
+    name: 'Emily Parker',
+    role: 'Founder of SpeedySnap. Investor in Zingify, Zoomify.',
+    avatar: Avatar4,
+  },
+  {
+    name: 'Rex Dangerfield',
+    role: 'Founder of InstaRush. Investor in Zingify, Zoomify.',
+    avatar: Avatar5,
+  },
+  {
+    name: 'Olivia Smith',
+    role: 'Founder of SnapSwift. Investor in Zingify, Zoomify.',
+    avatar: Avatar6,
+  },
+  {
+    name: 'Isabella Thompson',
+    role: 'Founder of Blitzify. Investor in Zingify, Zoomify.',
+    avatar: Avatar7,
+  },
+  {
+    name: 'Sophia Davis',
+    role: 'Founder of TurboZoom. Investor in Zingify, Zoomify.',
+    avatar: Avatar8,
+  },
+];
+---
+
+<Base>
+  <h1>Aimee makes you more productive and humane</h1>
+
+  <p class="mb-16 max-w-[35em]">
+    In the digital age, information overload is a common challenge faced by
+    individuals on a daily basis. The need for a robust and efficient personal
+    information manager (PIM) app has become increasingly important to help
+    users organize, access, and manage their personal data with ease. We're
+    building the next generation of this product category with focus on
+    simplicity and user experience.
+  </p>
+
+  <h2>Our investors</h2>
+  <p class="max-w-[35em]">
+    We are fortunate to work with some of the best investors in the world.
+    Chances are you are already using the products they helped to create.
+  </p>
+
+  <div class="my-[4em] grid max-w-[900px] grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-16">
+
+    {
+      people.map(person => (
+        <div>
+          <img class="max-h-[8em]" src={person.avatar.src} alt={person.name} />
+          <h3>{person.name}</h3>
+          <p class="m-0 text-[90%] text-[#888]">{person.role}</p>
+        </div>
+      ))
+    }
+  </div>
+</Base>
